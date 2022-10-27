@@ -15,7 +15,7 @@ object DownloadApp:
     Http.collectHttp[Request] {
       // GET /download
       case Method.GET -> !! / "download" =>
-        val fileName = "file.txt"
+        val fileName = "C:\\Users\\admin\\zio-quickstart-restful-webservice\\src\\main\\resources\\file.txt"
         Http.fromStream(ZStream.fromResource(fileName)).setHeaders(
           Headers(
             ("Content-Type", "application/octet-stream"),
@@ -26,7 +26,7 @@ object DownloadApp:
       // Download a large file using streams
       // GET /download/stream
       case Method.GET -> !! / "download" / "stream" =>
-        val file = "bigfile.txt"
+        val file = "C:\\Users\\admin\\zio-quickstart-restful-webservice\\src\\main\\resources\\bigfile.txt"
         Http.fromStream(
           ZStream.fromResource(file)
             .schedule(Schedule.spaced(50.millis))
