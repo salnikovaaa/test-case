@@ -1,28 +1,26 @@
-# ZIO Quickstart: Building RESTful Web Service
+# Transaction-check
 
-This is the simple quickstart for writing a RESTful ZIO Web Service. You can download and run it very quickly. This will give you an idea of how to write similar apps.
+## Задание
 
-This quickstart shows how to build a simple RESTful web service using ZIO. It uses
-- [ZIO HTTP](https://dream11.github.io/zio-http/) for the HTTP server
-- [ZIO JSON](https://zio.github.io/zio-json/) for the JSON serialization
-- [ZIO Logging](https://zio.github.io/zio-logging/) for integrate logging with slf4j
-- [ZIO Config](https://zio.github.io/zio-config/) for loading configuration data
+Добавить дополнительный роут, принимать транзакцию и проверять, есть ли src или dst в черном списке 
 
-## Quickstart Guide
+## Примеры работы
 
-We have a dedicated article about this quickstart at the ZIO documentation website called [ZIO Quickstart: Building RESTful Web Service](https://zio.dev/next/quickstarts/restful-webservice)
+Имеется черный список содержащий 2 3 10
 
-## Running The Example
+Такой вид черного списка предложен мной, чтобы продемонстрировать правильность работы (например, при src = "1", выведется Success)
 
-First, open the console and clone the project using `git` (or you can simply download the project) and then change the directory:
+![photo_2022-10-28_00-36-19](https://user-images.githubusercontent.com/75494936/198417842-b9dbbb6c-3888-4146-8ce1-bbe8cc03a6a4.jpg)
 
-```scala
-git clone git@github.com:zio/zio-quickstart-restful-webservice.git 
-cd zio-quickstart-restful-webservice
-```
+Пример вывода Cancel:
 
-Once you are inside the project directory, run the application:
+![photo_2022-10-28_00-36-36](https://user-images.githubusercontent.com/75494936/198417908-45ffb84f-ed10-41b0-aeb4-127f062d9248.jpg)
 
-```scala
-sbt run
-```
+
+## Jar
+
+Так же, вы можете найти jar, который находится в релизе.
+
+Демонстрация работы:
+
+![photo_2022-10-28_00-37-47](https://user-images.githubusercontent.com/75494936/198418088-01831dbc-3b29-4eac-8785-b529a5a207f2.jpg)
